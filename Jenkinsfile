@@ -1,6 +1,15 @@
 pipeline {
-      agent any
+      environemnt {
+            JAVA_TOOLS_OPTIONS = "-Duser.home=/home/jenkins"
+         }
       
+//      agent any
+      agent {
+            dockerfile {
+                  label "docker"
+                  args "-v /tmp/mvn:/home/jenkins/.m2 -e MAVEN_CONFIG=/home/jenkins/.m2"
+            }
+      }
       tools {
             maven "3.6.0"
       }
