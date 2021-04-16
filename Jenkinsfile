@@ -8,10 +8,8 @@ pipeline {
     stage("Build") {
       steps {
         sh "mvn -version"
-            **dir('complete'){**
-        sh "mvn clean install"
-                             }
-                             }
+        sh " mvn -f complete/ clean install"
+      }
     }
   }
   
