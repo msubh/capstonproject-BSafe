@@ -64,7 +64,7 @@
 					</buildArgs>
 				</configuration>
 				<executions>
-					<executions>
+					<execution>
 						<id>default</id>
 						<phase>install</phase>
 						<goals>
