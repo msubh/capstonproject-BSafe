@@ -1,5 +1,5 @@
-FROM openjdk:8-jdk-alpine
-RUN chown -R /user/local/webapp/
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM openjdk:8
+EXPOSE 8080
+ARG JAR_FILE=complete/target/*.jar
+COPY ${JAR_FILE} docker-spring-boot.jar
+ENTRYPOINT ["java","-jar","docker-spring-boot.jar"]
